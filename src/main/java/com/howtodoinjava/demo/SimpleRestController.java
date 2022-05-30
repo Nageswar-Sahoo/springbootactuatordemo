@@ -1,14 +1,19 @@
 package com.howtodoinjava.demo;
 
 import java.util.Date;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class SimpleRestController {
+
+	@Value("country")
+	private String value;
 	@GetMapping("/example")
 	public String example() {
-		return "Hello User !! " + new Date();
+		return "Hello User !! " + new Date()+ value;
 	}
 
 	public static void main(String[] args) {
