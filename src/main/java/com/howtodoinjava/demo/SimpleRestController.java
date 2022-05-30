@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SimpleRestController {
 
-	@Value("country")
+	@Value("${country}")
 	private String value;
 	@GetMapping("/example")
 	public String example() {
