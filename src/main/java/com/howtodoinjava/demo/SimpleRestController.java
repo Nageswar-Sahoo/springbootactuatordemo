@@ -11,9 +11,17 @@ public class SimpleRestController {
 
 	@Value("${country}")
 	private String value;
+
+	@Value("${player_lives}")
+	private String player_lives;
+	@Value("${PROPERTIES_FILE_NAME}")
+	private String PROPERTIES_FILE_NAME;
+	@Value("${base_properties}")
+	private String base_properties;
+	
 	@GetMapping("/example")
 	public String example() {
-		return "Hello User !! " + new Date()+ value;
+		return "Hello User !! " + new Date()+ value +" "+ player_lives +" "+ PROPERTIES_FILE_NAME+" " + base_properties;
 	}
 
 	public static void main(String[] args) {
